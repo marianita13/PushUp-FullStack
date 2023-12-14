@@ -27,3 +27,101 @@ ORDER BY `MigrationId`;
 [2023-12-14 13:20:25.969 -05:00 INF] Application started. Press Ctrl+C to shut down.
 [2023-12-14 13:20:25.970 -05:00 INF] Hosting environment: Development
 [2023-12-14 13:20:25.970 -05:00 INF] Content root path: C:\Users\user\Desktop\PushUp-FullStack\API
+[2023-12-14 13:21:08.662 -05:00 INF] Request starting HTTP/1.1 OPTIONS http://localhost:5029/user/register - null null
+[2023-12-14 13:21:08.685 -05:00 INF] CORS policy execution successful.
+[2023-12-14 13:21:08.688 -05:00 INF] Request finished HTTP/1.1 OPTIONS http://localhost:5029/user/register - 204 null null 26.7184ms
+[2023-12-14 13:21:08.691 -05:00 INF] Request starting HTTP/1.1 POST http://localhost:5029/user/register - application/json 92
+[2023-12-14 13:21:08.693 -05:00 INF] CORS policy execution successful.
+[2023-12-14 13:21:08.697 -05:00 WRN] Failed to determine the https port for redirect.
+[2023-12-14 13:21:08.726 -05:00 INF] Executing endpoint 'API.Contoller.UserController.Register (API)'
+[2023-12-14 13:21:08.746 -05:00 INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] Register(API.Dtos.DataUserDto) on controller API.Contoller.UserController (API).
+[2023-12-14 13:21:09.044 -05:00 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2023-12-14 13:21:09.104 -05:00 INF] Executed DbCommand (24ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`email`, `t`.`password`, `t`.`username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`rolName`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UserId`
+FROM (
+    SELECT `u`.`Id`, `u`.`email`, `u`.`password`, `u`.`username`
+    FROM `user` AS `u`
+    WHERE LOWER(`u`.`username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`rolName`
+    FROM `userRol` AS `u0`
+    INNER JOIN `rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UserId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2023-12-14 13:21:09.212 -05:00 INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 255), @p2='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `user` (`email`, `password`, `username`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `user`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+[2023-12-14 13:21:09.237 -05:00 INF] Executing StatusCodeResult, setting HTTP status code 200
+[2023-12-14 13:21:09.241 -05:00 INF] Executed action API.Contoller.UserController.Register (API) in 491.5249ms
+[2023-12-14 13:21:09.241 -05:00 INF] Executed endpoint 'API.Contoller.UserController.Register (API)'
+[2023-12-14 13:21:09.244 -05:00 INF] Request finished HTTP/1.1 POST http://localhost:5029/user/register - 200 0 null 552.7374ms
+[2023-12-14 13:21:42.155 -05:00 INF] Request starting HTTP/1.1 OPTIONS http://localhost:5029/user/register - null null
+[2023-12-14 13:21:42.156 -05:00 INF] CORS policy execution successful.
+[2023-12-14 13:21:42.156 -05:00 INF] Request finished HTTP/1.1 OPTIONS http://localhost:5029/user/register - 204 null null 1.5151ms
+[2023-12-14 13:21:42.158 -05:00 INF] Request starting HTTP/1.1 POST http://localhost:5029/user/register - application/json 74
+[2023-12-14 13:21:42.158 -05:00 INF] CORS policy execution successful.
+[2023-12-14 13:21:42.159 -05:00 INF] Executing endpoint 'API.Contoller.UserController.Register (API)'
+[2023-12-14 13:21:42.160 -05:00 INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] Register(API.Dtos.DataUserDto) on controller API.Contoller.UserController (API).
+[2023-12-14 13:21:42.208 -05:00 INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`email`, `t`.`password`, `t`.`username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`rolName`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UserId`
+FROM (
+    SELECT `u`.`Id`, `u`.`email`, `u`.`password`, `u`.`username`
+    FROM `user` AS `u`
+    WHERE LOWER(`u`.`username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`rolName`
+    FROM `userRol` AS `u0`
+    INNER JOIN `rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UserId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2023-12-14 13:21:42.213 -05:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 255), @p2='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `user` (`email`, `password`, `username`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `user`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+[2023-12-14 13:21:42.217 -05:00 INF] Executing StatusCodeResult, setting HTTP status code 200
+[2023-12-14 13:21:42.217 -05:00 INF] Executed action API.Contoller.UserController.Register (API) in 57.3335ms
+[2023-12-14 13:21:42.217 -05:00 INF] Executed endpoint 'API.Contoller.UserController.Register (API)'
+[2023-12-14 13:21:42.218 -05:00 INF] Request finished HTTP/1.1 POST http://localhost:5029/user/register - 200 0 null 59.7106ms
+[2023-12-14 13:22:51.442 -05:00 INF] Request starting HTTP/1.1 OPTIONS http://localhost:5029/user/register - null null
+[2023-12-14 13:22:51.443 -05:00 INF] CORS policy execution successful.
+[2023-12-14 13:22:51.443 -05:00 INF] Request finished HTTP/1.1 OPTIONS http://localhost:5029/user/register - 204 null null 0.3782ms
+[2023-12-14 13:22:51.444 -05:00 INF] Request starting HTTP/1.1 POST http://localhost:5029/user/register - application/json 79
+[2023-12-14 13:22:51.444 -05:00 INF] CORS policy execution successful.
+[2023-12-14 13:22:51.446 -05:00 INF] Executing endpoint 'API.Contoller.UserController.Register (API)'
+[2023-12-14 13:22:51.446 -05:00 INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] Register(API.Dtos.DataUserDto) on controller API.Contoller.UserController (API).
+[2023-12-14 13:22:51.454 -05:00 INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`email`, `t`.`password`, `t`.`username`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`, `t0`.`rolName`, `r0`.`Id`, `r0`.`Created`, `r0`.`Expires`, `r0`.`Revoked`, `r0`.`Token`, `r0`.`UserId`
+FROM (
+    SELECT `u`.`Id`, `u`.`email`, `u`.`password`, `u`.`username`
+    FROM `user` AS `u`
+    WHERE LOWER(`u`.`username`) = @__ToLower_0
+    LIMIT 1
+) AS `t`
+LEFT JOIN (
+    SELECT `u0`.`UsuarioId`, `u0`.`RolId`, `r`.`Id`, `r`.`rolName`
+    FROM `userRol` AS `u0`
+    INNER JOIN `rol` AS `r` ON `u0`.`RolId` = `r`.`Id`
+) AS `t0` ON `t`.`Id` = `t0`.`UsuarioId`
+LEFT JOIN `RefreshToken` AS `r0` ON `t`.`Id` = `r0`.`UserId`
+ORDER BY `t`.`Id`, `t0`.`UsuarioId`, `t0`.`RolId`, `t0`.`Id`
+[2023-12-14 13:22:51.457 -05:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 255), @p2='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO `user` (`email`, `password`, `username`)
+VALUES (@p0, @p1, @p2);
+SELECT `Id`
+FROM `user`
+WHERE ROW_COUNT() = 1 AND `Id` = LAST_INSERT_ID();
+[2023-12-14 13:22:51.459 -05:00 INF] Executing StatusCodeResult, setting HTTP status code 200
+[2023-12-14 13:22:51.459 -05:00 INF] Executed action API.Contoller.UserController.Register (API) in 13.4602ms
+[2023-12-14 13:22:51.459 -05:00 INF] Executed endpoint 'API.Contoller.UserController.Register (API)'
+[2023-12-14 13:22:51.460 -05:00 INF] Request finished HTTP/1.1 POST http://localhost:5029/user/register - 200 0 null 15.5501ms

@@ -1,9 +1,26 @@
+using System.Reflection;
+using API.Extension;
+using AspNetCoreRateLimit;
+using Microsoft.EntityFrameworkCore;
+using Persistence.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+builder.Services.ConfigureRatelimiting();
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
+builder.Services.ConfigureCore();
+builder.Services.AddJwt(builder.Configuration);
+builder.Services.AddAplicacionServices();
+builder.Services.AddDbContext<PushUpFullStackContext>(options =>
+{
+    string connectionString = builder.Configuration.GetConnectionString("ConexMysql");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 var app = builder.Build();
 
@@ -36,9 +53,19 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+app.UseCors("CorsPolicy");
+app.UseHttpsRedirection();
+app.UseIpRateLimiting();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.UseAuthentication();
+
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+record WeatherForecast(DateOnly Date, int TemperatureC, string Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }

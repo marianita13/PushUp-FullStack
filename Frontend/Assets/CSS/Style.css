@@ -60,7 +60,7 @@ li {
 	font-size: 24px;
 	display: flex;
 	align-items: center;
-	height: 90px;
+	height: 10%;
 	font-weight: 700;
 	top: 0;
 	left: 0;
@@ -89,6 +89,7 @@ li {
 	margin: 25px 0;
 	padding: 0 20px;
 	transition: all .3s ease;
+	height: 90%;
 }
 #sidebar.hide .side-menu {
 	padding: 0 6px;
@@ -126,7 +127,7 @@ li {
 	color: var(--light);
 }
 #sidebar .divider {
-	margin-top: 24px;
+	margin-top: 14px;
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -190,6 +191,10 @@ li {
 }
 #sidebar .ads .wrapper p span {
 	font-weight: 700;
+}
+
+#campus{
+	justify-self: self-end;
 }
 /* SIDEBAR */
 

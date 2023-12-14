@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Domain.Entities;
 
 namespace API.Dtos
 {
@@ -10,7 +11,8 @@ namespace API.Dtos
         public bool IsAuthenticated { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public List<string> Roles { get; set; }
+        public string Password { get; set; }
+        public ICollection<Rol> Roles { get; set; }
         public string Token { get; set; }
 
         [JsonIgnore]

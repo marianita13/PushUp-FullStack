@@ -24,6 +24,10 @@ li {
 }
 
 
+.title > img{
+  width: 80px;
+}
+
 ::selection{
   background: #12e8f0;
   color: #fff;

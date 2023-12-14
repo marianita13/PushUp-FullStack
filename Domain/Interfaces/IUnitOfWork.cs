@@ -7,14 +7,14 @@ namespace Domain.Interfaces
 {
     public interface IUnitOfWork
     {
-        ICategory Category {get;}
-        IMethodPayment MethodPayment {get;}
-        IPayment Payment {get;}
-        IProduct Product {get;}
-        IRol Rol {get;}
-        ISale Sale {get;}
-        IUser User {get;}
-        IClient Client {get;}
+        ICategory Categorys {get;}
+        IMethodPayment MethodPayments {get;}
+        IPayment Payments {get;}
+        IProduct Products {get;}
+        IRol Rols {get;}
+        ISale Sales {get;}
+        IUser Users {get;}
+        IClient Clients {get;}
         Task<int> SaveAsync();
     }
 }

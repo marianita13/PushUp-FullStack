@@ -1,6 +1,5 @@
 using System;
 using Application.Repository;
-using Domain.Entities;
 using Domain.Interfaces;
 using Persistence.Data;
 
@@ -9,92 +8,106 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly PushUpFullStackContext _context;
 
+    private ICategory _Category;
+    private IRol _Rol;
+    private IClient _Client;
+    private IMethodPayment _MethodPayment;
+    private IProduct _Product;
+    private ISale _Sale;
+    private IUser _User;
+    private IPayment _Payment;
+
     public UnitOfWork(PushUpFullStackContext context)
     {
         _context = context;
     }
 
-    private ICategory _Categories;
-    private IClient _Clients;
-    private IMethodPayment _MethodPayments;
-    private IPayment _Payments;
-    private IProduct _Products;
-    private ISale _Sales;
-    private IRol _Rols;
-    private IUser _Users;
-
-    public ICategory Category {
-        get {
-            if (_Categories == null) {
-                _Categories = new CategoryRepository(_context);
+    public ICategory Categorys {
+        get
+        {
+            if (_Category == null)
+            {
+                _Category = new CategoryRepository(_context);
             }
-            return _Categories;
+            return _Category;
         }
     }
 
-    public IMethodPayment MethodPayment {
-        get {
-            if (_MethodPayments == null) {
-                _MethodPayments = new MethodPaymentRepository(_context);
+    public IMethodPayment MethodPayments {
+        get
+        {
+            if (_MethodPayment == null)
+            {
+                _MethodPayment = new MethodPaymentRepository(_context);
             }
-            return _MethodPayments;
+            return _MethodPayment;
         }
     }
 
-    public IPayment Payment{
-        get {
-            if (_Payments == null) {
-                _Payments = new PaymentRepository(_context);
+    public IPayment Payments {
+        get
+        {
+            if (_Payment == null)
+            {
+                _Payment = new PaymentRepository(_context);
             }
-            return _Payments;
+            return _Payment;
         }
     }
 
-    public IProduct Product {
-        get {
-            if (_Products == null) {
-                _Products = new ProductRepository(_context);
+    public IRol Rols {
+        get
+        {
+            if (_Rol == null)
+            {
+                _Rol = new RolRepository(_context);
             }
-            return _Products;
+            return _Rol;
         }
     }
 
-    public IRol Rol {
-        get {
-            if (_Rols == null) {
-                _Rols = new RolRepository(_context);
+    public ISale Sales{
+        get
+        {
+            if (_Sale == null)
+            {
+                _Sale = new SaleRepository(_context);
             }
-            return _Rols;
+            return _Sale;
         }
     }
 
-    public ISale Sale {
-        get {
-            if (_Sales == null) {
-                _Sales = new SaleRepository(_context);
+    public IUser Users {
+        get
+        {
+            if (_User == null)
+            {
+                _User = new UserRepository(_context);
             }
-            return _Sales;
+            return _User;
+        }
+    }
+    public IClient Clients {
+        get
+        {
+            if (_Client == null)
+            {
+                _Client = new ClientRepository(_context);
+            }
+            return _Client;
         }
     }
 
-    public IUser User {
-        get {
-            if (_Users == null) {
-                _Users = new UserRepository(_context);
+    public IProduct Products {
+        get
+        {
+            if (_Product == null)
+            {
+                _Product = new ProductRepository(_context);
             }
-            return _Users;
+            return _Product;
         }
     }
-
-    public IClient Client {
-        get {
-            if (_Clients == null) {
-                _Clients = new ClientRepository(_context);
-            }
-            return _Clients;
-        }
-    }
-
     public void Dispose()
     {
         _context.Dispose();

@@ -8,9 +8,9 @@ C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.csproj.CopyComplete
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.dll
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.pdb
 C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\ref\Persistence.dll
-C:\Users\user\Desktop\PushUp-FullStack\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json

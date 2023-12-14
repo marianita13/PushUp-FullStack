@@ -70,6 +70,7 @@ C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.AssemblyInfo.cs
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.sourcelink.json
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
@@ -84,4 +85,3 @@ C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\refint\API.dll
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.pdb
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\ref\API.dll
-C:\Users\user\Desktop\PushUp-FullStack\API\obj\Debug\net8.0\API.sourcelink.json

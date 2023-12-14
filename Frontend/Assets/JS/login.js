@@ -23,7 +23,7 @@ signupButton.onclick = (()=>{
 
 
 /* SIGN UP */
-const user = document.querySelector("#user");
+const user = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const buttonUp = document.querySelector("#sing-up");
